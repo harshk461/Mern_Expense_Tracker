@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { AiOutlineClose } from 'react-icons/ai'
 import Table from './Table';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 export default function ExpenseTable(props) {
     const data = props.data;
@@ -64,7 +65,13 @@ export default function ExpenseTable(props) {
                     <div className="p-2 flex flex-col justify-center items-center">
                         <div className='flex justify-between items-center w-full px-4'>
                             <h1 className='text-2xl my-4 font-bold '>Filter Window</h1>
-                            <AiOutlineClose size={25} onClick={openWindow} />
+                            <FontAwesomeIcon
+                                icon={faXmark}
+                                spin
+                                size="xl"
+                                className='pointer'
+                                onClick={openWindow}
+                                style={{ "--fa-secondary-color": "#0953d3", "--fa-secondary-opacity": "0.6", }} />
                         </div>
                         <div className='flex flex-col justify-start w-full p-2 gap-2'>
                             <label htmlFor="month">Sort By</label>
