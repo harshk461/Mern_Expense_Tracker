@@ -1,13 +1,43 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .iconButton {
+    @apply p-2 border-4 border-black rounded-md
+  }
+
+  .inputBox {
+    @apply mb-4 bg-gray-50 border-gray-300 border text-gray-900 rounded-md outline-none mx-auto text-sm w-full focus:ring-blue-500 focus:border-blue-500 block h-full placeholder:text-gray-900 py-2 px-4
+  }
+
+  .selectBox {
+    @apply w-[150px] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block p-2.5
+  }
+
+  .expenseHeaderBox {
+    @apply w-[350px] h-[350px] rounded-[100%] bg-blue-400 flex justify-center items-center flex-col gap-8 shadow-2xl shadow-slate-400 border-4 border-black;
+  }
+
+  .filterAnimationOpen {
+    animation: open 300ms ease-in-out;
+  }
+
+  .td {
+    @apply border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-center;
+  }
+
+  .tr {
+    @apply px-6 bg-blue-50 text-blue-500 align-middle border border-solid border-blue-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center;
+  }
+
+  @keyframes open {
+    from {
+      transform: translateX(100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
 }
