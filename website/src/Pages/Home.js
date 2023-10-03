@@ -7,6 +7,7 @@ import ExpenseHeader from "../Components/ExpenseHeader";
 import ExpenseTable from "../Components/ExpenseTable";
 import { toast } from "react-hot-toast";
 import React from "react";
+import Graph from "../Components/Graph";
 export default function Home() {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -48,6 +49,7 @@ export default function Home() {
             <Header />
             <ExpenseHeader data={data} />
             <ExpenseTable data={data} />
+            <Graph data={data} />
             {loading && <Loader />
             }
         </>

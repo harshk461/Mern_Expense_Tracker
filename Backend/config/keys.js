@@ -1,4 +1,6 @@
+require('dotenv').config();
+
 module.exports = {
-    mongoURI: "mongodb+srv://testmailhk102:Dfcqwh5@expense.vf5mear.mongodb.net/?retryWrites=true&w=majority",
+    mongoURI: process.env.MONGO_URL,
     secretOrKey: "secret"
 };

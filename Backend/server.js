@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -5,7 +7,7 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 const expense = require("./routes/api/expense");
 const cors = require('cors');
-
+const keys = require('./config/keys');
 const app = express();
 // Bodyparser middleware
 app.use(cors({
@@ -34,7 +36,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 app.get("/", (req, res) => {
-    res.json({ "test": "test" });
+    res.json({ "test": keys.mongoURI });
 })
 app.use("/api/users", users);
 app.use("/expense", expense);

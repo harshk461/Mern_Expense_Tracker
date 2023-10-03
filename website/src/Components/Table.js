@@ -64,25 +64,25 @@ export default function Table(props) {
             {filterData.length === 0 ? (
                 <NoDataPresent />
             ) : (
-                <div class="w-full">
-                    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
-                        <div class="block w-full overflow-x-auto">
-                            <table class="items-center bg-transparent w-full border-collapse ">
+                <div className="w-full">
+                    <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+                        <div className="block w-full overflow-x-auto">
+                            <table className="items-center bg-transparent w-full border-collapse ">
                                 <thead>
                                     <tr>
-                                        <th class="tr">
+                                        <th className="tr">
                                             Title
                                         </th>
-                                        <th class="tr">
+                                        <th className="tr">
                                             Description
                                         </th>
-                                        <th class="tr">
+                                        <th className="tr">
                                             Category
                                         </th>
-                                        <th class="tr">
+                                        <th className="tr">
                                             Amount
                                         </th>
-                                        <th class="tr">
+                                        <th className="tr">
                                             Created On
                                         </th>
                                     </tr>
@@ -90,7 +90,7 @@ export default function Table(props) {
 
                                 <tbody>
                                     {finalData.map((item) => (
-                                        <tr>
+                                        <tr key={item._id}>
                                             <td className='td'>
                                                 {item.title}
                                             </td>
@@ -109,7 +109,6 @@ export default function Table(props) {
                                         </tr>
                                     ))}
                                 </tbody>
-
                             </table>
                         </div>
                     </div>
